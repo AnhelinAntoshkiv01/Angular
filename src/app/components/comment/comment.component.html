@@ -1,3 +1,6 @@
-<div>
-  {{comment|json}}
+<div *ngIf="comment">
+  <div routerLinkActive="active">
+    <div>{{comment.id}}.) {{comment.name}}</div>
+    <button (click)="getDetails()">Get Details</button>
+  </div>
 </div>
