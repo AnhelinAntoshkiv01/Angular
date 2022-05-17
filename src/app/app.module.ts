@@ -26,7 +26,7 @@ const routes: Route[] = [
         ]
       },
       {
-        path: 'post', component: PostsComponent, children: [
+        path: 'posts', component: PostsComponent, children: [
           {path: ':id', component: PostDetailsComponent}
         ]
       },
