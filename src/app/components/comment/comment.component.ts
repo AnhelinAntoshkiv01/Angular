@@ -9,7 +9,6 @@ import {IComment} from "../../interfaces";
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent implements OnInit {
-
   @Input()
   comment: IComment;
 
