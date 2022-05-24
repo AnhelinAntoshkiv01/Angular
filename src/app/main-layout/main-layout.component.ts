@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {filter, map, Observable, of} from "rxjs";
+import {ResolveEnd, ResolveStart, Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-layout',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-layout.component.css']
 })
 export class MainLayoutComponent implements OnInit {
+  loading$: Observable<boolean> = of(false)
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.loading$ = this.router.events.pipe(
+      filter(e => e instanceof ResolveStart || e instanceof ResolveEnd),
+      map(e => e instanceof ResolveStart)
+    )
   }
 
 }
