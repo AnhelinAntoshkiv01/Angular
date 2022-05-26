@@ -1,9 +1,8 @@
 .container {
   height: 100px;
-  box-sizing: border-box;
   display: flex;
   justify-content: space-around;
-  padding: 30px 20%;
+  align-items: center;
   background: darkcyan;
   font-size: 25px;
 }
@@ -11,6 +10,7 @@
 a {
   color: orangered;
   text-decoration: none;
+  padding: 0 50px;
 }
 
 .active {
